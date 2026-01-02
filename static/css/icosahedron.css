@@ -1,0 +1,250 @@
+.scene {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  top: 50%;
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .scene {
+    top: 20vh;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.icosahedron {
+  animation: rotate 50s linear infinite;
+  will-change: transform;
+  transform-origin: center;
+  transform-style: preserve-3d;
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(-30deg) rotateY(360deg) rotateZ(180deg);
+  }
+}
+
+
+.triangle {
+  width: 15rem;
+  height: 12.99038rem;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  transform-origin: bottom center;
+  opacity: 0;
+  animation: intro 4s var(--delay, 0ms) ease-in-out forwards;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 152, 0, 0.35),
+    rgba(255, 87, 34, 0.15),
+    transparent 90%
+  );
+
+  border: 1px solid rgba(255, 152, 0, 0.4);
+  box-shadow:
+    0 0 8px rgba(255, 152, 0, 0.3),
+    0 0 20px rgba(255, 152, 0, 0.15) inset;
+  filter: drop-shadow(0 0 10px rgba(255, 152, 0, 0.2));
+  backdrop-filter: blur(1px);
+  transition: all 0.3s ease-in-out;
+}
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(0rem) rotateX(0deg) rotateY(0deg) translateZ(0rem) rotateX(0deg);
+  }
+  10% {
+    opacity: 0.9;
+    transform: scale(1) translateY(0rem) rotateX(0deg) rotateY(0deg) translateZ(0rem) rotateX(0deg);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1) translateY(var(--ty, 0rem)) rotateX(var(--s, 0deg)) rotateY(var(--ry, 0deg)) translateZ(10.3228644035rem) rotateX(var(--rx, 0deg));
+  }
+}
+.triangle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0.5% 99.7%, 50% 1%, 99.5% 99.7%);
+  background: transparent;
+}
+.triangle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 152, 0, 0.3), transparent 70%);
+  animation: pulse 6s infinite ease-in-out;
+  pointer-events: none;
+  opacity: 0.6;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.triangle:nth-child(1) {
+  --hue: 111deg;
+  --delay: 0s;
+  --ry: 0deg;
+  --rx: -10.54deg;
+}
+.triangle:nth-child(2) {
+  --hue: 105deg;
+  --delay: 0s;
+  --ry: 72deg;
+  --rx: -10.54deg;
+}
+.triangle:nth-child(3) {
+  --hue: 80deg;
+  --delay: 0s;
+  --ry: 144deg;
+  --rx: -10.54deg;
+}
+.triangle:nth-child(4) {
+  --hue: 63deg;
+  --delay: 0s;
+  --ry: 216deg;
+  --rx: -10.54deg;
+}
+.triangle:nth-child(5) {
+  --hue: 96deg;
+  --delay: 0s;
+  --ry: 288deg;
+  --rx: -10.54deg;
+}
+.triangle:nth-child(6) {
+  --hue: 118deg;
+  --delay: 0s;
+  --ry: 0deg;
+  --rx: -10.54deg;
+  --delay: 4s;
+  --ty: -12.7278810568rem;
+  --s: 180deg;
+}
+.triangle:nth-child(7) {
+  --hue: 76deg;
+  --delay: 0s;
+  --ry: 72deg;
+  --rx: -10.54deg;
+  --delay: 4s;
+  --ty: -12.7278810568rem;
+  --s: 180deg;
+}
+.triangle:nth-child(8) {
+  --hue: 120deg;
+  --delay: 0s;
+  --ry: 144deg;
+  --rx: -10.54deg;
+  --delay: 4s;
+  --ty: -12.7278810568rem;
+  --s: 180deg;
+}
+.triangle:nth-child(9) {
+  --hue: 82deg;
+  --delay: 0s;
+  --ry: 216deg;
+  --rx: -10.54deg;
+  --delay: 4s;
+  --ty: -12.7278810568rem;
+  --s: 180deg;
+}
+.triangle:nth-child(10) {
+  --hue: 160deg;
+  --delay: 0s;
+  --ry: 288deg;
+  --rx: -10.54deg;
+  --delay: 4s;
+  --ty: -12.7278810568rem;
+  --s: 180deg;
+}
+.triangle:nth-child(11) {
+  --hue: 101deg;
+  --ry: 36deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --delay: 8s;
+  --ty: -12.7278810568rem;
+}
+.triangle:nth-child(12) {
+  --hue: 64deg;
+  --ry: 108deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --delay: 8s;
+  --ty: -12.7278810568rem;
+}
+.triangle:nth-child(13) {
+  --hue: 99deg;
+  --ry: 180deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --delay: 8s;
+  --ty: -12.7278810568rem;
+}
+.triangle:nth-child(14) {
+  --hue: 144deg;
+  --ry: 252deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --delay: 8s;
+  --ty: -12.7278810568rem;
+}
+.triangle:nth-child(15) {
+  --hue: 145deg;
+  --ry: 324deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --delay: 8s;
+  --ty: -12.7278810568rem;
+}
+.triangle:nth-child(16) {
+  --hue: 111deg;
+  --ry: 36deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --s: 180deg;
+}
+.triangle:nth-child(17) {
+  --hue: 107deg;
+  --ry: 108deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --s: 180deg;
+}
+.triangle:nth-child(18) {
+  --hue: 146deg;
+  --ry: 180deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --s: 180deg;
+}
+.triangle:nth-child(19) {
+  --hue: 141deg;
+  --ry: 252deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --s: 180deg;
+}
+.triangle:nth-child(20) {
+  --hue: 99deg;
+  --ry: 324deg;
+  --rx: 52.7deg;
+  --delay: 12s;
+  --s: 180deg;
+}

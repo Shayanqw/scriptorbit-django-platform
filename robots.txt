@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /staticfiles/admin/
+Allow: /staticfiles/
+Sitemap: https://www.scriptorbit.com/sitemap.xml

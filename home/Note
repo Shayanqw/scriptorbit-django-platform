@@ -1,0 +1,7 @@
+from django.contrib.auth.models import User
+from home.models import ClientPreview
+
+client_user = User.objects.create_user('Rosa2', 'Rosa@gmail.com', 'Rosa1234')
+client_user.save()
+
+ClientPreview.objects.create(user=client_user, template_name='Rosa')

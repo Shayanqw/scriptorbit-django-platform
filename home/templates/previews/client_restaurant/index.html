@@ -1,0 +1,27 @@
+<!-- templates/preview_restaurant.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Website Preview</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../static/previews/client_restaurant/style.css">
+
+</head>
+<body>
+    <header>
+      <h1>Welcome to Our Restaurant</h1>
+      <p>Exclusive Preview for {{ user.username }}</p>
+    </header>
+    <section>
+      <h2>Our Specialties</h2>
+      <p>Enjoy the finest dining experience with our curated menu and ambiance.</p>
+      <!-- Add more restaurant-specific content here -->
+    </section>
+    <footer>
+      <p>Preview Mode – No download or inspection allowed.</p>
+      <a href="{% url 'home:logout' %}" style="color: #fff;">Logout</a>
+    </footer>
+      <script src="../../../static/previews/client_restaurant/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- templates/preview_restaurant.html -->
+<!DOCTYPE html>
+<html lang="En">
+<head>
+    <title>Restaurant Website Preview</title>
+    <meta charset="utf-8">
+    <style>
+      /* Basic CSS styling for the restaurant preview */
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f8f8f8;
+          margin: 0;
+          padding: 0;
+      }
+      header {
+          background: #333;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+      }
+      section {
+          margin: 20px;
+          padding: 20px;
+          background: #fff;
+      }
+      footer {
+          text-align: center;
+          padding: 10px;
+          background: #333;
+          color: #fff;
+      }
+    </style>
+    <script>
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      }, false);
+
+      // Disable key shortcuts for inspecting the page (F12, Ctrl+Shift+I, etc.)
+      document.addEventListener('keydown', function(e) {
+          if (e.keyCode === 123 ||
+              (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+              e.preventDefault();
+          }
+      }, false);
+    </script>
+</head>
+<body>
+    <header>
+      <h1>Welcome to Our Restaurant</h1>
+      <p>Exclusive Preview for {{ user.username }}</p>
+    </header>
+    <section>
+      <h2>Our Specialties</h2>
+      <p>Enjoy the finest dining experience with our curated menu and ambiance.</p>
+      <!-- Add more restaurant-specific content here -->
+    </section>
+    <footer>
+      <p>Preview Mode – No download or inspection allowed.</p>
+      <a href="{% url 'home:logout' %}" style="color: #fff;">Logout</a>
+    </footer>
+</body>
+</html>

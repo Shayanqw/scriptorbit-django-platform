@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  	{% load seo_extras %}
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+          content="Welcome to Script Orbit, where creativity meets innovation. Explore our projects, services, and design studio.">
+    {% block meta %}{% endblock %}
+
+    <!-- Open Graph Meta Tags (Optional) -->
+    <meta property="og:title" content="Script Orbit - Creative Design Studio">
+    <meta property="og:description"
+          content="Welcome to Script Orbit, where creativity meets innovation. Explore our projects, services, and design studio.">
+    <meta property="og:image" content="{% static 'img/icons/Favicon.png' %}">
+    <meta property="og:url" content="https://www.scriptorbit.com">
+    <meta property="og:type" content="website">
+
+    {% block canonical %}
+        <link rel="canonical" href="{{ request.build_absolute_uri|cut_querystring }}" />
+    {% endblock %}
+
+    <!-- Preconnect Hints -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- CSS Dependencies -->
+    <link rel="preload" as="font" type="font/woff2" href="{% static 'css/plugins/font-awesome/webfonts/fa-solid-900.woff2' %}"
+      crossorigin>
+
+    <link rel="stylesheet" href="{% static 'css/plugins/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/font-awesome/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preload" href="{% static 'css/icosahedron.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% static 'css/icosahedron.css' %}"></noscript>
+
+    <!-- Page Title -->
+    <title>{% block title %}Script Orbit{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/icons/Favicon.png' %}">
+</head>
+
+<body>
+{% block body %}
+    {% if messages %}
+        <div class="container">
+            <ul class="mil-breadcrumbs mil-center mil-mb-60 messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
+
+<!-- JS Dependencies -->
+<script src="{% static 'js/plugins/jquery.min.js' %}"></script>
+<script src="{% static 'js/plugins/swup.min.js' %}" defer></script>
+<script src="{% static 'js/plugins/swiper.min.js' %}" defer></script>
+<script src="{% static 'js/plugins/fancybox.min.js' %}" defer></script>
+<script src="{% static 'js/plugins/gsap.min.js' %}" defer></script>
+<script src="{% static 'js/plugins/smooth-scroll.js' %}" defer></script>
+<script src="{% static 'js/plugins/ScrollTrigger.min.js' %}" defer></script>
+<script src="{% static 'js/plugins/ScrollTo.min.js' %}" defer></script>
+<script src="{% static 'js/main.js' %}" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+</body>
+
+</html>
