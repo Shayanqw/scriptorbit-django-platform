@@ -1,4 +1,4 @@
-# ScriptOrbit — Django Platform
+# ScriptOrbit - Django Platform
 
 A production-style **Django web platform** powering Script Orbit’s public presence: portfolio projects, blog publishing, careers/job applications, and authenticated client preview flows. Built with clean app separation, SEO fundamentals, and CI-backed checks.
 
